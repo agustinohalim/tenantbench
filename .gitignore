@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Downloaded third-party data (BIRD, CC BY-SA 4.0) — fetched by scripts, never committed
+data/raw/
+data/work/
+
+# Run outputs that may be large; summaries are committed under results/
+runs/
+
+# Local model weights
+models/
+node_modules/
+
+# Installed historical validator releases (fetched by scripts)
+versions/
+v7_askdb/versions/
+v7_askdb/node_modules/

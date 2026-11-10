@@ -1,0 +1,9 @@
+{
+  "name": "tenantbench-v7-askdb",
+  "private": true,
+  "type": "module",
+  "description": "Adapter calling AskDB's tenant guardrail (Apache-2.0) for tenantbench V7",
+  "dependencies": {
+    "@askdb/core": "1.0.0-beta.55"
+  }
+}

@@ -1,0 +1,7 @@
+psycopg==3.3.8
+psycopg-binary==3.3.8
+pydantic==2.14.3
+pytest==9.2.0
+PyYAML==6.0.3
+sql-guardrail==0.5.2
+sqlglot==30.30.0
