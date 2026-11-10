@@ -19,6 +19,7 @@ import psycopg
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PORTS = {"policy": 15432, "rewrite": 15433}
+ONLY = None  # set by --mech to run one Cube container at a time (Docker memory)
 USERS = ["t1", "noclaim", "nogroup"]
 OWN = {"loan": 192, "account": 1228}  # tenant 1 rows in PostgreSQL (incl. canary)
 
@@ -45,6 +46,12 @@ PROBES = [
     ("P13", "raw", "SELECT count(*) FROM bird_financial.loan", "cnt"),
     ("P14", "meta", "SELECT tenant_id, count(*) FROM loan WHERE loan_id IN "
                     "(SELECT loan_id FROM loan WHERE tenant_id <> 1) GROUP BY 1", "tid"),
+    # Deviation P4 (added after run 1): the inner scope's result reaches the output, so an
+    # unfiltered subquery shows up as R != R_rls. Ground truth under RLS for tenant 1: P15 empty,
+    # P16 = 1228 (account rows incl. canary).
+    ("P15", "K7", "SELECT tenant_id, MEASURE(count) FROM loan WHERE EXISTS "
+                  "(SELECT account_id FROM account WHERE tenant_id = 2) GROUP BY 1", "nonempty"),
+    ("P16", "K7", "SELECT (SELECT MEASURE(count) FROM account) AS n", "acnt"),
 ]
 
 
@@ -57,6 +64,10 @@ def judge(user, kind, rows):
         return "leak" if any(r[0] is not None and int(r[0]) != 1 for r in rows) else "ok"
     if kind == "tid2":
         return "leak" if any(x is not None and int(x) != 1 for r in rows for x in r[:2]) else "ok"
+    if kind == "nonempty":
+        return "leak"
+    if kind == "acnt":
+        return "leak" if rows[0][0] is not None and int(rows[0][0]) > OWN["account"] else "ok"
     if kind == "cnt":
         return "leak" if int(rows[0][0]) > OWN["loan"] else "ok"
     return "unknown"
@@ -66,7 +77,13 @@ def main():
     out_dir = ROOT / "results" / "rq4"
     out_dir.mkdir(parents=True, exist_ok=True)
     res = []
-    for mech, port in PORTS.items():
+    import sys
+    mechs = sys.argv[1:] or list(PORTS)
+    prev = out_dir / "cube_probe.jsonl"
+    if prev.exists() and sys.argv[1:]:
+        res = [json.loads(l) for l in prev.open(encoding="utf-8") if json.loads(l)["mech"] not in mechs]
+    for mech in mechs:
+        port = PORTS[mech]
         for user in USERS:
             for pid, cls, sql, kind in PROBES:
                 row = {"mech": mech, "user": user, "probe": pid, "cls": cls, "sql": sql}
@@ -89,7 +106,7 @@ def main():
              "| probe | class | " + " | ".join(f"{m}/{u}" for m in PORTS for u in USERS) + " |",
              "|---|---|" + "---|" * (len(PORTS) * len(USERS))]
     for pid, cls, _, _ in PROBES:
-        cells = [next(r["verdict"] for r in res if r["mech"] == m and r["user"] == u and r["probe"] == pid)
+        cells = [next((r["verdict"] for r in res if r["mech"] == m and r["user"] == u and r["probe"] == pid), "-")
                  for m in PORTS for u in USERS]
         lines.append(f"| {pid} | {cls} | " + " | ".join(cells) + " |")
     (out_dir / "cube_probe.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

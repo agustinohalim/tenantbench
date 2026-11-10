@@ -32,10 +32,15 @@ def query_rewrite(query: dict, ctx: dict) -> dict:
     # Documented pattern (docs.cube.dev access-control/context, "Using query_rewrite"):
     # add the filter only when the claim is present. Generalised to every cube the query touches.
     if 'tenant' in ctx['securityContext']:
+        # Deviation P4: SQL API pushdown sends member expressions as dicts with 'cubeName'.
+        def cube_of(m):
+            if isinstance(m, dict):
+                return m.get('cubeName') or str(m.get('member', '')).split('.')[0]
+            return str(m).split('.')[0]
         members = [m for k in ('measures', 'dimensions', 'segments') for m in query.get(k, [])]
-        members += [f.get('member', '') for f in query.get('filters', []) if isinstance(f, dict)]
+        members += [f for f in query.get('filters', []) if isinstance(f, dict) and 'member' in f]
         members += [t.get('dimension', '') for t in query.get('timeDimensions', [])]
-        for c in sorted({m.split('.')[0] for m in members if m} & set(CUBES)):
+        for c in sorted({cube_of(m) for m in members if m} & set(CUBES)):
             query['filters'].append({'member': f'{c}.tenant_id', 'operator': 'equals',
                                      'values': [str(ctx['securityContext']['tenant'])]})
     return query
