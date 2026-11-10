@@ -1,0 +1,230 @@
+[
+ {
+  "spec": "dbt",
+  "url": "https://docs.getdbt.com/docs/use-dbt-semantic-layer/sl-faqs",
+  "quote": "Any physical access policies you have tied to your credentials will be respected",
+  "status": "FOUND"
+ },
+ {
+  "spec": "dbt",
+  "url": "https://docs.getdbt.com/docs/use-dbt-semantic-layer/sl-faqs",
+  "quote": "The dbt Semantic Layer is proprietary to dbt, however some components of it are open-source",
+  "status": "FOUND"
+ },
+ {
+  "spec": "dbt",
+  "url": "https://docs.getdbt.com/docs/use-dbt-semantic-layer/setup-sl",
+  "quote": "Use Snowflake, BigQuery, Databricks, Redshift, Postgres, or Trino",
+  "status": "FOUND"
+ },
+ {
+  "spec": "dbt",
+  "url": "https://docs.getdbt.com/docs/use-dbt-semantic-layer/setup-sl",
+  "quote": "read-only",
+  "status": "FOUND"
+ },
+ {
+  "spec": "dbt",
+  "url": "https://docs.getdbt.com/docs/build/metrics-overview",
+  "quote": "Consider it as your WHERE clause",
+  "status": "FOUND"
+ },
+ {
+  "spec": "dbt",
+  "url": "https://docs.getdbt.com/docs/build/saved-queries",
+  "quote": "Saved queries are a way to save commonly used queries in MetricFlow",
+  "status": "FOUND"
+ },
+ {
+  "spec": "dbt",
+  "url": "https://docs.getdbt.com/docs/dbt-ai/about-mcp",
+  "quote": "text-to-SQL, and SQL execution",
+  "status": "FOUND"
+ },
+ {
+  "spec": "dbt",
+  "url": "https://docs.getdbt.com/docs/dbt-ai/mcp-available-tools",
+  "quote": "doesn't block write statements",
+  "status": "FOUND"
+ },
+ {
+  "spec": "metricflow",
+  "url": "https://raw.githubusercontent.com/dbt-labs/metricflow/main/README.md",
+  "quote": "Apache 2.0",
+  "status": "FOUND"
+ },
+ {
+  "spec": "cube",
+  "url": "https://docs.cube.dev/docs/data-modeling/access-control/context",
+  "quote": "enforce mandatory filters that apply to all queries",
+  "status": "FOUND"
+ },
+ {
+  "spec": "cube",
+  "url": "https://docs.cube.dev/docs/data-modeling/access-control/context",
+  "quote": "No role found in Security Context",
+  "status": "FOUND"
+ },
+ {
+  "spec": "cube",
+  "url": "https://docs.cube.dev/reference/data-modeling/data-access-policies",
+  "quote": "access is automatically denied to all other groups",
+  "status": "FOUND"
+ },
+ {
+  "spec": "cube",
+  "url": "https://docs.cube.dev/reference/data-modeling/view",
+  "quote": "are enforced on every query against the view",
+  "status": "FOUND"
+ },
+ {
+  "spec": "cube",
+  "url": "https://docs.cube.dev/embedding/multitenancy",
+  "quote": "if (user.id)",
+  "status": "FOUND"
+ },
+ {
+  "spec": "cube",
+  "url": "https://docs.cube.dev/reference/core-data-apis/sql-api",
+  "quote": "allowing arbitrary SQL against connected data sources",
+  "status": "FOUND"
+ },
+ {
+  "spec": "cube",
+  "url": "https://docs.cube.dev/docs/integrations/mcp-server",
+  "quote": "Cube SQL query (PostgreSQL dialect)",
+  "status": "FOUND"
+ },
+ {
+  "spec": "cube",
+  "url": "https://docs.cube.dev/docs/data-modeling/data-access-policies",
+  "quote": "Both will apply to the request",
+  "status": "FOUND"
+ },
+ {
+  "spec": "looker",
+  "url": "https://docs.cloud.google.com/looker/docs/reference/param-explore-access-filter",
+  "quote": "will receive an error when trying to view the Explore",
+  "status": "FOUND"
+ },
+ {
+  "spec": "looker",
+  "url": "https://docs.cloud.google.com/looker/docs/reference/param-explore-access-filter",
+  "quote": "users will be able to see all the data in that Explore",
+  "status": "FOUND"
+ },
+ {
+  "spec": "looker",
+  "url": "https://docs.cloud.google.com/looker/docs/reference/param-explore-sql-always-where",
+  "quote": "users cannot change",
+  "status": "FOUND"
+ },
+ {
+  "spec": "looker",
+  "url": "https://docs.cloud.google.com/looker/docs/derived-tables",
+  "quote": "avoid using common table expressions",
+  "status": "FOUND"
+ },
+ {
+  "spec": "looker",
+  "url": "https://docs.cloud.google.com/looker/docs/sql-runner-basics",
+  "quote": "directly access your database",
+  "status": "FOUND"
+ },
+ {
+  "spec": "looker",
+  "url": "https://docs.cloud.google.com/looker/docs/mcp",
+  "quote": "cannot access data or models that the authenticated user is not authorized to see",
+  "status": "FOUND"
+ },
+ {
+  "spec": "looker",
+  "url": "https://docs.cloud.google.com/looker/docs/dialects",
+  "quote": "PostgreSQL 9.5+",
+  "status": "FOUND"
+ },
+ {
+  "spec": "snowflake",
+  "url": "https://docs.snowflake.com/en/user-guide/views-semantic/best-practices-dev",
+  "quote": "they propagate to semantic views and are enforced",
+  "status": "FOUND"
+ },
+ {
+  "spec": "snowflake",
+  "url": "https://docs.snowflake.com/en/sql-reference/sql/create-semantic-view",
+  "quote": "Required to create a new semantic view",
+  "status": "FOUND"
+ },
+ {
+  "spec": "snowflake",
+  "url": "https://docs.snowflake.com/en/user-guide/views-semantic/querying",
+  "quote": "Subqueries are not allowed in metric expressions",
+  "status": "FOUND"
+ },
+ {
+  "spec": "snowflake",
+  "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+  "quote": "bypass the agent's semantic views",
+  "status": "FOUND"
+ },
+ {
+  "spec": "databricks",
+  "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/yaml-reference",
+  "quote": "applies to all queries that reference the metric view",
+  "status": "FOUND"
+ },
+ {
+  "spec": "databricks",
+  "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/create",
+  "quote": "CREATE TABLE and USE SCHEMA privileges",
+  "status": "FOUND"
+ },
+ {
+  "spec": "databricks",
+  "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/yaml-reference",
+  "quote": "Supported sources include tables, views, metric views, and SQL queries",
+  "status": "FOUND"
+ },
+ {
+  "spec": "databricks",
+  "url": "https://docs.databricks.com/aws/en/genie-agents/concepts",
+  "quote": "Generated queries are always read-only",
+  "status": "FOUND"
+ },
+ {
+  "spec": "databricks",
+  "url": "https://docs.databricks.com/aws/en/genie-agents/concepts",
+  "quote": "not the author's",
+  "status": "FOUND"
+ },
+ {
+  "spec": "ossie",
+  "url": "https://raw.githubusercontent.com/apache/ossie/main/core-spec/spec.md",
+  "quote": "0.3.0.dev0",
+  "status": "FOUND"
+ },
+ {
+  "spec": "ossie",
+  "url": "https://raw.githubusercontent.com/apache/ossie/main/core-spec/spec.md",
+  "quote": "Additional context for AI tools",
+  "status": "FOUND"
+ },
+ {
+  "spec": "ossie",
+  "url": "https://raw.githubusercontent.com/apache/ossie/main/extensions/dialects.md",
+  "quote": "is the only dialect the specification defines",
+  "status": "FOUND"
+ },
+ {
+  "spec": "ossie",
+  "url": "https://raw.githubusercontent.com/apache/ossie/main/ROADMAP.md",
+  "quote": "access control for Ossie models",
+  "status": "FOUND"
+ },
+ {
+  "spec": "ossie",
+  "url": "https://incubator.apache.org/clutch/ossie.html",
+  "quote": "2026-06-22",
+  "status": "FOUND"
+ }
+]
