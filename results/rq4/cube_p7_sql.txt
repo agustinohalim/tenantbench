@@ -1,0 +1,5 @@
+# SQL that Cube 1.8.21 sent to PostgreSQL for probe P7, identity t1, captured with
+# ALTER ROLE cube_ro SET log_statement='all' (reset afterwards). 10 Nov 2026 ~04:56 UTC.
+# Identical under both mechanisms (access_policy and query_rewrite with the claim present).
+SELECT "loan"."tenant_id" "tenant_id", "loan"."loan_id" "loan_id" FROM ( SELECT "loan".loan_id "loan_id", "loan".tenant_id "tenant_id" FROM bird_financial.loan AS "loan" WHERE ("loan".tenant_id = $1) AND ("loan".account_id IN (SELECT "account".account_id "account_id" FROM bird_financial.account AS "account" WHERE ("account".tenant_id = $2))) ) AS "loan" LIMIT 50000
+-- Parameters: $1 = '1', $2 = '1'
