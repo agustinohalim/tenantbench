@@ -1,0 +1,9 @@
+Pre-registration locked 2026-11-10.
+
+code commit (this repo):        8c67f70bb4fc532d5545ddbcd804e27413fc5802
+pre-registration commit:        3675e49343e964424daf7d49070dbfc2b72e2de7
+                                (private research repository, file Riset/Prareg_ValidatorTenant.md)
+data:                           BIRD dev.zip, 346207293 bytes,
+                                sha256 cdd6d19faeb45a23970b98d3ef6c40a87987c95459c2cf12076897a60cf5a630
+
+Test-split runs use the code at 8c67f70. This file is the only change after it.
