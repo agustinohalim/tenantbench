@@ -1,0 +1,30 @@
+cubes:
+  - name: account
+    sql_table: bird_financial.account
+    dimensions:
+      - name: account_id
+        sql: account_id
+        type: number
+        primary_key: true
+        public: true
+      - name: tenant_id
+        sql: tenant_id
+        type: number
+      - name: district_id
+        sql: district_id
+        type: number
+      - name: frequency
+        sql: frequency
+        type: string
+    measures:
+      - name: count
+        type: count
+    access_policy:
+      - group: tenant
+        member_level:
+          includes: "*"
+        row_level:
+          filters:
+            - member: tenant_id
+              operator: equals
+              values: [ "{ securityContext.tenant }" ]
