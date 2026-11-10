@@ -49,7 +49,13 @@ def main():
             row["leaks"] = base.leaks
             row["cls"] = classify(g["sql"], p.tenant_tables, t) if base.leaks else None
             for v in vals:
-                d = v.check(g["sql"], p, t)
+                # Deviation P5: a validator that raises (e.g. on truncated SQL) is counted as rejecting,
+                # recorded as "raised" so it can be reported apart from an explicit rejection.
+                try:
+                    d = v.check(g["sql"], p, t)
+                except Exception:  # noqa: BLE001
+                    row[v.name] = "raised"
+                    continue
                 if not d.accepted:
                     row[v.name] = "rejected"
                 elif v.rewrites:
@@ -78,6 +84,9 @@ def main():
     lines += ["", "## Classes of leaking generations", ""]
     for c, k in collections.Counter(r["cls"] for r in rows if r["leaks"]).most_common():
         lines.append(f"- {c}: {k}")
+    lines += ["", "## Validator raised an exception (counted as rejection, deviation P5)", ""]
+    for v in VS:
+        lines.append(f"- {v}: {sum(1 for r in rows if r[v] == 'raised')}")
     lines += ["", "## Leaking generations accepted, all cells", ""]
     for v in VS:
         lines.append(f"- {v}: {sum(1 for r in rows if r[v] == 'leak')}")
