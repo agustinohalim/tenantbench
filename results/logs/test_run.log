@@ -1,0 +1,3 @@
+<repo>\tenantbench\validators\v6_sqlguardrail.py:26: UserWarning: Policy has no `allowed_functions` set: any SQL function call is allowed, including DB-side helpers like pg_sleep / pg_read_file. Set `allowed_functions: [...]` (e.g. [cast, count, sum, avg, coalesce]) to gate function calls in production.
+  return sqlguard.Policy(
+wrote <repo>\runs\test_runs.jsonl (2455 items x 7 validators)

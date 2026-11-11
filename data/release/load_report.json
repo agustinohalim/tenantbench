@@ -1,0 +1,552 @@
+[
+ {
+  "db": "financial",
+  "orphans_dropped": {
+   "account": 0,
+   "client": 0,
+   "disp": 0,
+   "loan": 0,
+   "order": 0,
+   "trans": 0,
+   "card": 0
+  },
+  "rows": {
+   "account": 4500,
+   "card": 892,
+   "client": 5369,
+   "disp": 5369,
+   "district": 77,
+   "loan": 682,
+   "order": 6471,
+   "trans": 1056320
+  },
+  "types": {
+   "account": {
+    "account_id": "bigint",
+    "district_id": "bigint",
+    "frequency": "text",
+    "date": "text"
+   },
+   "card": {
+    "card_id": "bigint",
+    "disp_id": "bigint",
+    "type": "text",
+    "issued": "text"
+   },
+   "client": {
+    "client_id": "bigint",
+    "gender": "text",
+    "birth_date": "text",
+    "district_id": "bigint"
+   },
+   "disp": {
+    "disp_id": "bigint",
+    "client_id": "bigint",
+    "account_id": "bigint",
+    "type": "text"
+   },
+   "district": {
+    "district_id": "bigint",
+    "a2": "text",
+    "a3": "text",
+    "a4": "text",
+    "a5": "text",
+    "a6": "text",
+    "a7": "text",
+    "a8": "bigint",
+    "a9": "bigint",
+    "a10": "double precision",
+    "a11": "bigint",
+    "a12": "double precision",
+    "a13": "double precision",
+    "a14": "bigint",
+    "a15": "bigint",
+    "a16": "bigint"
+   },
+   "loan": {
+    "loan_id": "bigint",
+    "account_id": "bigint",
+    "date": "text",
+    "amount": "bigint",
+    "duration": "bigint",
+    "payments": "double precision",
+    "status": "text"
+   },
+   "order": {
+    "order_id": "bigint",
+    "account_id": "bigint",
+    "bank_to": "text",
+    "account_to": "bigint",
+    "amount": "double precision",
+    "k_symbol": "text"
+   },
+   "trans": {
+    "trans_id": "bigint",
+    "account_id": "bigint",
+    "date": "text",
+    "type": "text",
+    "operation": "text",
+    "amount": "bigint",
+    "balance": "bigint",
+    "k_symbol": "text",
+    "bank": "text",
+    "account": "bigint"
+   }
+  },
+  "orphans_hashed": {
+   "account": 0,
+   "client": 0,
+   "disp": 0,
+   "loan": 0,
+   "order": 0,
+   "trans": 0,
+   "card": 0
+  },
+  "tenant_tables": [
+   "account",
+   "card",
+   "client",
+   "disp",
+   "district",
+   "loan",
+   "order",
+   "trans"
+  ],
+  "shared_tables": []
+ },
+ {
+  "db": "formula_1",
+  "orphans_dropped": {
+   "races": 0,
+   "results": 0,
+   "laptimes": 0,
+   "pitstops": 0,
+   "qualifying": 0,
+   "driverstandings": 0,
+   "constructorstandings": 0,
+   "constructorresults": 0
+  },
+  "rows": {
+   "circuits": 72,
+   "constructors": 208,
+   "drivers": 840,
+   "seasons": 68,
+   "races": 976,
+   "constructorresults": 11082,
+   "constructorstandings": 11836,
+   "driverstandings": 31578,
+   "laptimes": 420369,
+   "pitstops": 6070,
+   "qualifying": 7397,
+   "status": 134,
+   "results": 23657
+  },
+  "types": {
+   "circuits": {
+    "circuitid": "bigint",
+    "circuitref": "text",
+    "name": "text",
+    "location": "text",
+    "country": "text",
+    "lat": "double precision",
+    "lng": "double precision",
+    "alt": "bigint",
+    "url": "text"
+   },
+   "constructors": {
+    "constructorid": "bigint",
+    "constructorref": "text",
+    "name": "text",
+    "nationality": "text",
+    "url": "text"
+   },
+   "drivers": {
+    "driverid": "bigint",
+    "driverref": "text",
+    "number": "bigint",
+    "code": "text",
+    "forename": "text",
+    "surname": "text",
+    "dob": "text",
+    "nationality": "text",
+    "url": "text"
+   },
+   "seasons": {
+    "year": "bigint",
+    "url": "text"
+   },
+   "races": {
+    "raceid": "bigint",
+    "year": "bigint",
+    "round": "bigint",
+    "circuitid": "bigint",
+    "name": "text",
+    "date": "text",
+    "time": "text",
+    "url": "text"
+   },
+   "constructorresults": {
+    "constructorresultsid": "bigint",
+    "raceid": "bigint",
+    "constructorid": "bigint",
+    "points": "double precision",
+    "status": "text"
+   },
+   "constructorstandings": {
+    "constructorstandingsid": "bigint",
+    "raceid": "bigint",
+    "constructorid": "bigint",
+    "points": "double precision",
+    "position": "bigint",
+    "positiontext": "text",
+    "wins": "bigint"
+   },
+   "driverstandings": {
+    "driverstandingsid": "bigint",
+    "raceid": "bigint",
+    "driverid": "bigint",
+    "points": "double precision",
+    "position": "bigint",
+    "positiontext": "text",
+    "wins": "bigint"
+   },
+   "laptimes": {
+    "raceid": "bigint",
+    "driverid": "bigint",
+    "lap": "bigint",
+    "position": "bigint",
+    "time": "text",
+    "milliseconds": "bigint"
+   },
+   "pitstops": {
+    "raceid": "bigint",
+    "driverid": "bigint",
+    "stop": "bigint",
+    "lap": "bigint",
+    "time": "text",
+    "duration": "text",
+    "milliseconds": "bigint"
+   },
+   "qualifying": {
+    "qualifyid": "bigint",
+    "raceid": "bigint",
+    "driverid": "bigint",
+    "constructorid": "bigint",
+    "number": "bigint",
+    "position": "bigint",
+    "q1": "text",
+    "q2": "text",
+    "q3": "text"
+   },
+   "status": {
+    "statusid": "bigint",
+    "status": "text"
+   },
+   "results": {
+    "resultid": "bigint",
+    "raceid": "bigint",
+    "driverid": "bigint",
+    "constructorid": "bigint",
+    "number": "bigint",
+    "grid": "bigint",
+    "position": "bigint",
+    "positiontext": "text",
+    "positionorder": "bigint",
+    "points": "double precision",
+    "laps": "bigint",
+    "time": "text",
+    "milliseconds": "bigint",
+    "fastestlap": "bigint",
+    "rank": "bigint",
+    "fastestlaptime": "text",
+    "fastestlapspeed": "text",
+    "statusid": "bigint"
+   }
+  },
+  "orphans_hashed": {
+   "races": 0,
+   "results": 0,
+   "laptimes": 0,
+   "pitstops": 0,
+   "qualifying": 0,
+   "driverstandings": 0,
+   "constructorstandings": 0,
+   "constructorresults": 0
+  },
+  "tenant_tables": [
+   "constructorresults",
+   "constructorstandings",
+   "driverstandings",
+   "laptimes",
+   "pitstops",
+   "qualifying",
+   "races",
+   "results",
+   "seasons"
+  ],
+  "shared_tables": [
+   "circuits",
+   "constructors",
+   "drivers",
+   "status"
+  ]
+ },
+ {
+  "db": "superhero",
+  "orphans_dropped": {
+   "superhero": 3,
+   "hero_power": 0,
+   "hero_attribute": 0
+  },
+  "rows": {
+   "alignment": 4,
+   "attribute": 6,
+   "colour": 35,
+   "gender": 3,
+   "publisher": 25,
+   "race": 61,
+   "superhero": 747,
+   "hero_attribute": 3738,
+   "superpower": 167,
+   "hero_power": 5825
+  },
+  "types": {
+   "alignment": {
+    "id": "bigint",
+    "alignment": "text"
+   },
+   "attribute": {
+    "id": "bigint",
+    "attribute_name": "text"
+   },
+   "colour": {
+    "id": "bigint",
+    "colour": "text"
+   },
+   "gender": {
+    "id": "bigint",
+    "gender": "text"
+   },
+   "publisher": {
+    "id": "bigint",
+    "publisher_name": "text"
+   },
+   "race": {
+    "id": "bigint",
+    "race": "text"
+   },
+   "superhero": {
+    "id": "bigint",
+    "superhero_name": "text",
+    "full_name": "text",
+    "gender_id": "bigint",
+    "eye_colour_id": "bigint",
+    "hair_colour_id": "bigint",
+    "skin_colour_id": "bigint",
+    "race_id": "bigint",
+    "publisher_id": "bigint",
+    "alignment_id": "bigint",
+    "height_cm": "bigint",
+    "weight_kg": "bigint"
+   },
+   "hero_attribute": {
+    "hero_id": "bigint",
+    "attribute_id": "bigint",
+    "attribute_value": "bigint"
+   },
+   "superpower": {
+    "id": "bigint",
+    "power_name": "text"
+   },
+   "hero_power": {
+    "hero_id": "bigint",
+    "power_id": "bigint"
+   }
+  },
+  "orphans_hashed": {
+   "superhero": 0,
+   "hero_power": 0,
+   "hero_attribute": 0
+  },
+  "tenant_tables": [
+   "hero_attribute",
+   "hero_power",
+   "publisher",
+   "superhero"
+  ],
+  "shared_tables": [
+   "alignment",
+   "attribute",
+   "colour",
+   "gender",
+   "race",
+   "superpower"
+  ]
+ },
+ {
+  "db": "toxicology",
+  "orphans_dropped": {
+   "atom": 0,
+   "bond": 0,
+   "connected": 0
+  },
+  "rows": {
+   "atom": 12333,
+   "bond": 12379,
+   "connected": 24758,
+   "molecule": 343
+  },
+  "types": {
+   "atom": {
+    "atom_id": "text",
+    "molecule_id": "text",
+    "element": "text"
+   },
+   "bond": {
+    "bond_id": "text",
+    "molecule_id": "text",
+    "bond_type": "text"
+   },
+   "connected": {
+    "atom_id": "text",
+    "atom_id2": "text",
+    "bond_id": "text"
+   },
+   "molecule": {
+    "molecule_id": "text",
+    "label": "text"
+   }
+  },
+  "orphans_hashed": {
+   "atom": 3222,
+   "bond": 3223,
+   "connected": 0
+  },
+  "tenant_tables": [
+   "atom",
+   "bond",
+   "connected",
+   "molecule"
+  ],
+  "shared_tables": []
+ },
+ {
+  "db": "california_schools",
+  "orphans_dropped": {
+   "frpm": 0,
+   "satscores": 211
+  },
+  "rows": {
+   "frpm": 9986,
+   "satscores": 2058,
+   "schools": 17686
+  },
+  "types": {
+   "frpm": {
+    "cdscode": "text",
+    "academic year": "text",
+    "county code": "text",
+    "district code": "bigint",
+    "school code": "text",
+    "county name": "text",
+    "district name": "text",
+    "school name": "text",
+    "district type": "text",
+    "school type": "text",
+    "educational option type": "text",
+    "nslp provision status": "text",
+    "charter school (y/n)": "bigint",
+    "charter school number": "text",
+    "charter funding type": "text",
+    "irc": "bigint",
+    "low grade": "text",
+    "high grade": "text",
+    "enrollment (k-12)": "double precision",
+    "free meal count (k-12)": "double precision",
+    "percent (%) eligible free (k-12)": "double precision",
+    "frpm count (k-12)": "double precision",
+    "percent (%) eligible frpm (k-12)": "double precision",
+    "enrollment (ages 5-17)": "double precision",
+    "free meal count (ages 5-17)": "double precision",
+    "percent (%) eligible free (ages 5-17)": "double precision",
+    "frpm count (ages 5-17)": "double precision",
+    "percent (%) eligible frpm (ages 5-17)": "double precision",
+    "2013-14 calpads fall 1 certification status": "bigint"
+   },
+   "satscores": {
+    "cds": "text",
+    "rtype": "text",
+    "sname": "text",
+    "dname": "text",
+    "cname": "text",
+    "enroll12": "bigint",
+    "numtsttakr": "bigint",
+    "avgscrread": "bigint",
+    "avgscrmath": "bigint",
+    "avgscrwrite": "bigint",
+    "numge1500": "bigint"
+   },
+   "schools": {
+    "cdscode": "text",
+    "ncesdist": "text",
+    "ncesschool": "text",
+    "statustype": "text",
+    "county": "text",
+    "district": "text",
+    "school": "text",
+    "street": "text",
+    "streetabr": "text",
+    "city": "text",
+    "zip": "text",
+    "state": "text",
+    "mailstreet": "text",
+    "mailstrabr": "text",
+    "mailcity": "text",
+    "mailzip": "text",
+    "mailstate": "text",
+    "phone": "text",
+    "ext": "text",
+    "website": "text",
+    "opendate": "text",
+    "closeddate": "text",
+    "charter": "bigint",
+    "charternum": "text",
+    "fundingtype": "text",
+    "doc": "text",
+    "doctype": "text",
+    "soc": "text",
+    "soctype": "text",
+    "edopscode": "text",
+    "edopsname": "text",
+    "eilcode": "text",
+    "eilname": "text",
+    "gsoffered": "text",
+    "gsserved": "text",
+    "virtual": "text",
+    "magnet": "bigint",
+    "latitude": "double precision",
+    "longitude": "double precision",
+    "admfname1": "text",
+    "admlname1": "text",
+    "admemail1": "text",
+    "admfname2": "text",
+    "admlname2": "text",
+    "admemail2": "text",
+    "admfname3": "text",
+    "admlname3": "text",
+    "admemail3": "text",
+    "lastupdate": "text"
+   }
+  },
+  "orphans_hashed": {
+   "frpm": 0,
+   "satscores": 0
+  },
+  "tenant_tables": [
+   "frpm",
+   "satscores",
+   "schools"
+  ],
+  "shared_tables": []
+ }
+]

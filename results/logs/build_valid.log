@@ -1,0 +1,5 @@
+california_schools {'gold': 89, 'valid': 75, 'valid_test': 60, 'q0_leaks': 65, 'q0_same': 10, 'valid_dev': 15, 'qv_error': 14}
+financial {'gold': 106, 'valid': 87, 'valid_test': 76, 'q0_leaks': 72, 'q0_same': 13, 'qv_error': 19, 'valid_dev': 11, 'q0_error': 2}
+toxicology {'gold': 145, 'valid': 144, 'valid_test': 121, 'q0_same': 26, 'q0_leaks': 118, 'valid_dev': 23, 'qv_error': 1}
+superhero {'gold': 129, 'valid': 129, 'valid_test': 105, 'q0_leaks': 109, 'valid_dev': 24, 'q0_same': 20}
+formula_1 {'gold': 174, 'valid': 158, 'valid_test': 131, 'q0_same': 62, 'valid_dev': 27, 'q0_leaks': 95, 'qv_error': 16, 'q0_error': 1}

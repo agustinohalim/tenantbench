@@ -3,8 +3,8 @@
 A test harness for checking whether SQL validators that enforce a tenant predicate on
 LLM-generated queries can be bypassed.
 
-Status: pre-registered on 2026-11-10. `results/PREREG_LOCK` names the locked commits; test-split
-results are produced only after it exists.
+Status: version 1.0.0. The evaluation was pre-registered on 2026-11-10; `results/PREREG_LOCK` names
+the locked code commit, and the test split was run once after it.
 
 ## What it does
 
@@ -18,9 +18,25 @@ results are produced only after it exists.
 
 ## Data
 
-BIRD is © its authors and licensed under CC BY-SA 4.0 (https://bird-bench.github.io). It is
-downloaded by `scripts/fetch_bird.sh` and is not stored in this repository. Any derived data
-released from this project carries the same license.
+BIRD is © its authors and licensed under CC BY-SA 4.0 (https://bird-bench.github.io). The original
+databases are downloaded by `scripts/fetch_bird.sh` and are not stored here. Everything under
+`data/release/` and `results/` is derived from BIRD and carries CC BY-SA 4.0; the code is MIT.
+
+| File | Content |
+|---|---|
+| `data/release/corpus.jsonl` | 2,391 leaking statements (12 classes, dev and test splits), as built by `build_corpus.py` |
+| `data/release/valid.jsonl` | 593 valid queries with a tenant predicate in every scope |
+| `data/release/load_report.json` | tenancy assignment and row counts per database |
+| `results/dev/`, `results/test/` | per-statement verdicts of V1–V7 (`*_runs.jsonl`), summaries, release sweep (`*_versions.csv`), latency |
+| `results/rq2/` | 1,200 local-model generations under six injection instructions and their evaluation |
+| `results/rq4/` | Cube 1.8.21 run test (two runs) and documentation notes for six semantic-layer specifications |
+| `results/logs/` | run logs; local paths replaced by `<repo>` and `<home>` |
+
+`results/test/test_inputs.sha256` holds the hashes of the corpus and valid queries used for the test
+run; the files in `data/release/` match them.
+
+The tenancy is synthetic. No database in BIRD is multi-tenant in its original form, and no data from
+any production system are used.
 
 ## Layout
 
@@ -59,3 +75,11 @@ python -I scripts/version_sweep.py --split dev   # needs releases under versions
 | V7 | AskDB `@askdb/core` 1.0.0-beta.55 (Apache-2.0), `validateTenantGuardrails` |
 
 Third-party validators are called as published; their licences apply to them.
+
+## Citation
+
+See `CITATION.cff`. The archived release has a DOI on Zenodo.
+
+## Licence
+
+Code: MIT (`LICENSE`). Derived data and results: CC BY-SA 4.0, following BIRD.

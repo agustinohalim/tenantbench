@@ -1,0 +1,5 @@
+financial {'account': 4500, 'card': 892, 'client': 5369, 'disp': 5369, 'district': 77, 'loan': 682, 'order': 6471, 'trans': 1056320} orphans: {'account': 0, 'client': 0, 'disp': 0, 'loan': 0, 'order': 0, 'trans': 0, 'card': 0}
+formula_1 {'circuits': 72, 'constructors': 208, 'drivers': 840, 'seasons': 68, 'races': 976, 'constructorresults': 11082, 'constructorstandings': 11836, 'driverstandings': 31578, 'laptimes': 420369, 'pitstops': 6070, 'qualifying': 7397, 'status': 134, 'results': 23657} orphans: {'races': 0, 'results': 0, 'laptimes': 0, 'pitstops': 0, 'qualifying': 0, 'driverstandings': 0, 'constructorstandings': 0, 'constructorresults': 0}
+superhero {'alignment': 4, 'attribute': 6, 'colour': 35, 'gender': 3, 'publisher': 25, 'race': 61, 'superhero': 747, 'hero_attribute': 3738, 'superpower': 167, 'hero_power': 5825} orphans: {'superhero': 3, 'hero_power': 0, 'hero_attribute': 0}
+toxicology {'atom': 12333, 'bond': 12379, 'connected': 24758, 'molecule': 343} orphans: {'atom': 0, 'bond': 0, 'connected': 0}
+california_schools {'frpm': 9986, 'satscores': 2058, 'schools': 17686} orphans: {'frpm': 0, 'satscores': 211}

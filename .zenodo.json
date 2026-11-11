@@ -1,0 +1,33 @@
+{
+  "title": "tenantbench: a leakage benchmark for tenant validators of language-model-generated SQL",
+  "description": "<p>Corpus, row-level-security oracle and harness for testing SQL validators that enforce a tenant predicate on statements written by language models. Twelve structural bypass classes, each taken from a public source, are templated onto five BIRD development databases (CC BY-SA 4.0) with a synthetic four-tenant split, giving 2,391 leaking statements and 593 valid queries. A statement leaks when its PostgreSQL 17 result under row-level security differs from its result without it. The release holds the code (MIT), the corpus, the valid queries and the per-statement verdicts of the development and test splits, the release sweep of two open-source validators, the language-model arm (1,200 generations under six prompt-injection instructions) and the Cube semantic-layer run test. Files under data/release/ and results/ are derived from BIRD and carry CC BY-SA 4.0.</p><p>Version 1.0.0 is the code and data of the pre-registered evaluation (code locked at commit 8c67f70; test split run once after the lock).</p>",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "version": "1.0.0",
+  "creators": [
+    {
+      "name": "Halim, Agustino",
+      "affiliation": "Information Systems and Technology, Universitas OSO, Pontianak, Indonesia",
+      "orcid": "0009-0008-4388-1174"
+    }
+  ],
+  "keywords": [
+    "text-to-SQL",
+    "multi-tenancy",
+    "row-level security",
+    "SQL validation",
+    "benchmark",
+    "prompt injection",
+    "large language models"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://bird-bench.github.io",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "url"
+    }
+  ]
+}

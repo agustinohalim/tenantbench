@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+title: "tenantbench: a leakage benchmark for tenant validators of language-model-generated SQL"
+abstract: >-
+  Corpus, row-level-security oracle and harness for testing SQL validators that enforce a
+  tenant predicate on statements written by language models. Twelve structural bypass classes
+  are templated onto five BIRD development databases with a synthetic four-tenant split; a
+  statement leaks when its PostgreSQL result with row-level security differs from its result
+  without it. Includes seven validator adapters, a release-history sweep for two open-source
+  validators, a language-model arm under prompt injection, and a semantic-layer run test.
+type: software
+license: MIT
+version: 1.0.0
+date-released: "2026-11-11"
+authors:
+  - given-names: Agustino
+    family-names: Halim
+    affiliation: "Information Systems and Technology, Universitas OSO, Pontianak, Indonesia"
+    orcid: "https://orcid.org/0009-0008-4388-1174"
+keywords:
+  - text-to-SQL
+  - multi-tenancy
+  - row-level security
+  - SQL validation
+  - benchmark
+  - prompt injection
+  - large language models
+repository-code: "https://github.com/agustinohalim/tenantbench"
