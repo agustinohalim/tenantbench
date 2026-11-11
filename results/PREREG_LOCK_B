@@ -1,0 +1,7 @@
+Phase B pre-registration locked 2026-11-11.
+
+code commit (this repo):        86a869048d8e27f0f5e571516c78e25ef06a3ca7
+pre-registration commit:        581597da94487926e8af4d21cf2d7c60a07521e5
+                                (private research repository, file Riset/Prareg_ValidatorTenant_B.md)
+
+Phase B runs use code committed after this file; each adapter is committed before its run.
