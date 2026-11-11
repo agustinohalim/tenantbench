@@ -5,6 +5,9 @@ LLM-generated queries can be bypassed.
 
 Status: version 1.0.0. The evaluation was pre-registered on 2026-11-10; `results/PREREG_LOCK` names
 the locked code commit, and the test split was run once after it.
+`registration/Prareg_ValidatorTenant_disunting.md` is the pre-registration (Indonesian), a public
+copy with five marked redactions and the SHA-256 of the original file at locking and with its five
+logged deviations.
 
 ## What it does
 
