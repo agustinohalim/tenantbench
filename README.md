@@ -81,7 +81,8 @@ Third-party validators are called as published; their licences apply to them.
 
 ## Citation
 
-See `CITATION.cff`. The archived release has a DOI on Zenodo.
+See `CITATION.cff`. Version 1.0.0 is archived on Zenodo: https://doi.org/10.5281/zenodo.24126240
+(all versions: https://doi.org/10.5281/zenodo.24126239).
 
 ## Licence
 
